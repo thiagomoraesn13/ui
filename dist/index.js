@@ -1,5 +1,4 @@
 import { jsx as Pe } from "react/jsx-runtime";
-import "react";
 const Ge = (e, t) => {
   const o = new Array(e.length + t.length);
   for (let r = 0; r < e.length; r++)
@@ -2756,7 +2755,7 @@ const Ge = (e, t) => {
     orderSensitiveModifiers: ["*", "**", "after", "backdrop", "before", "details-content", "file", "first-letter", "first-line", "marker", "placeholder", "selection"]
   };
 }, wo = /* @__PURE__ */ Ke(xo);
-function vo({ className: e, ...t }) {
+function yo({ className: e, ...t }) {
   return /* @__PURE__ */ Pe(
     "button",
     {
@@ -2777,5 +2776,5 @@ function vo({ className: e, ...t }) {
   );
 }
 export {
-  vo as Button
+  yo as Button
 };
