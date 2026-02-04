@@ -1,4 +1,5 @@
 import { tv } from "tailwind-variants";
+import { LoadingDots } from "../LoadingDotz";
 
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: "primary" | "secondary" | "link";
@@ -27,7 +28,7 @@ const variants = tv({
       default: "p-3 leading-6",
       support: "p-2 text-xs",
       desktop: "p-4 text-lg",
-      none: "p-0 leading-none", // 👈
+      none: "p-0 leading-none",
     },
     disabled: {
       true: "cursor-not-allowed",
@@ -67,7 +68,7 @@ const variants = tv({
   },
 });
 
-export const GenericButton: React.FC<ButtonProps> = (props: ButtonProps) => {
+export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
   const {
     children,
     variant,
@@ -84,7 +85,11 @@ export const GenericButton: React.FC<ButtonProps> = (props: ButtonProps) => {
       className={`${variants({ variant, width, size, disabled, loading })} ${className}`}
       {...rest}
     >
-      {children}
+      {loading && variant !== "link" ? (
+        <LoadingDots type="primary" />
+      ) : (
+        <>{children}</>
+      )}
     </button>
   );
 };

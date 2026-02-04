@@ -7,7 +7,8 @@ export default defineConfig({
     lib: {
       entry: "src/index.ts",
       name: "ui",
-      fileName: "index",
+      formats: ["es", "umd"],
+      fileName: (format) => (format === "es" ? "index.js" : "index.umd.cjs"),
     },
     rollupOptions: {
       external: ["react", "react-dom", "react/jsx-runtime"],
