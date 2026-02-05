@@ -1,5 +1,6 @@
-import { tv } from "tailwind-variants";
+import { cn, tv } from "tailwind-variants";
 import { LoadingDots } from "../LoadingDotz";
+import { bg, text } from "../../foundation/colors";
 
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: "primary" | "secondary" | "link";
@@ -16,7 +17,7 @@ const variants = tv({
   base: "relative font-family font-bold rounded-full active:opacity-80 cursor-pointer",
   variants: {
     variant: {
-      primary: "bg-brand text-base-dk",
+      primary: cn(bg("brand"), text("base-dk")),
       secondary: "bg-base-lt text-brand border-2",
       link: "text-brand",
     },
